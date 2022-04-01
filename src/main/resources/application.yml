@@ -1,0 +1,13 @@
+telegram:
+  botName: ${BOT_NAME}
+  token: ${BOT_TOKEN}
+
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5433/telegram_bot_db'
+    username: 'postgres'
+    password: 'password'
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    database-platform: 'org.hibernate.dialect.PostgreSQLDialect'
