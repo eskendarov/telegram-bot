@@ -1,0 +1,11 @@
+logging:
+  file:
+    name: "${logging.file.path}/profile_dev.log"
+  level:
+    root: INFO
+    org.hibernate: ERROR
+    io.eskendarov.bot.telegram: DEBUG
+    org.springframework.web: DEBUG
+  pattern:
+    file: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"
+    console: "%d{dd-MM-yyyy HH:mm:ss} %magenta([%thread]) %highlight(%-5level) %yellow(%logger{36}).%cyan(%M) %-22n> %green(%msg) %n"

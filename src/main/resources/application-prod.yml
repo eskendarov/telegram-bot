@@ -1,0 +1,11 @@
+logging:
+  file:
+    name: "${logging.file.path}/profile_prod.log"
+  level:
+    root: INFO
+    org.hibernate: ERROR
+    io.eskendarov.bot.telegram: INFO
+    org.springframework.web: INFO
+  pattern:
+    file: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"
+    console: # OFF

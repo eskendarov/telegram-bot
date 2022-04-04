@@ -1,13 +1,49 @@
+###########################################################
+#     TELEGRAM API
+###########################################################
 telegram:
   botName: ${BOT_NAME}
   token: ${BOT_TOKEN}
-
+###########################################################
+#     LOGGER
+###########################################################
+logging:
+  file:
+    path: ".logs"
+    name: "${logging.file.path}/profile_default.log"
+  charset:
+    console: UTF-8
+    file: UTF-8
+###########################################################
+#     SPRING
+###########################################################
 spring:
+  banner.location: banner.txt
+  output.ansi.enabled: always
+  main:
+    lazy-initialization: true
+  ###########################################################
+  #     DATA SOURCE
+  ###########################################################
   datasource:
-    url: 'jdbc:postgresql://localhost:5433/telegram_bot_db'
-    username: 'postgres'
-    password: 'password'
+    url: jdbc:postgresql://localhost:5432/telegram_bot_db
+    username: postgres
+    password: password
+  ###########################################################
+  #     JPA / HIBERNATE
+  ###########################################################
   jpa:
     database: POSTGRESQL
-    show-sql: false
-    database-platform: 'org.hibernate.dialect.PostgreSQLDialect'
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: off
+    properties:
+      hibernate:
+        format_sql: true
+  ###########################################################
+  #     PROFILES
+  ###########################################################
+  profiles:
+    active: @profileActive@
